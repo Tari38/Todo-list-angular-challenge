@@ -1,0 +1,143 @@
+#wrapper {
+  font: 20px Helvetica, sans-serif;
+  color: #333;
+  text-align: center;
+  padding: 50px;
+  align-items: center;
+}
+
+.btn {
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: lightyellow;
+  height: 50px;
+  width: 33%;
+  display: inline;
+  text-align: center;
+  text-transform: uppercase;
+  justify-content: center;
+  font-weight: bold;
+  box-shadow: 2px 4px 6px rgb(82, 15, 88);
+  transition: 0.3s ease-out;
+}
+
+.btn:hover {
+  transform: scale(1.1);
+  transition: 0.3s ease-in;
+}
+
+hr {
+  background-color: darkmagenta;
+  height: 3px;
+  margin-bottom: 20px;
+  box-shadow: 2px 4px 6px rgb(82, 15, 88);
+}
+
+h1 {
+  font-family: "Montserrat Alternates", sans-serif;
+  font-size: 40px;
+  text-align: center;
+  color: darkmagenta;
+}
+
+#article {
+  display: block;
+  text-align: center;
+  width: auto;
+  margin: 0 auto;
+  color: rgb(95, 34, 95);
+}
+
+a {
+  color: #ebe045;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #333;
+  text-decoration: none;
+}
+
+body {
+  color: #4d4d4d;
+  background-color: #e7cdeb;
+}
+
+#main {
+  background-color: #e7cdeb;
+  max-width: 500px;
+  width: 85%;
+  margin: 2rem auto;
+  padding: 1rem;
+  text-align: center;
+  border: 9px double rgb(232, 241, 97);
+  box-shadow: 2px 4px 6px rgb(82, 15, 88);
+  border-radius: 20px;
+}
+
+@media screen and (min-width: 600px) {
+  .main {
+    width: 70%;
+  }
+}
+
+label {
+  font-size: 1.3rem;
+  font-weight: bold;
+  display: block;
+  padding-bottom: 1rem;
+}
+
+.new-todo-name {
+  cursor: pointer;
+  width: 100%;
+  padding: 1rem;
+  border: 2px solid rgb(100, 14, 100);
+  display: block;
+  box-sizing: border-box;
+  font-size: 1rem;
+  text-align: center;
+  box-shadow: 2px 4px 6px rgb(82, 15, 88);
+  border-radius: 20px;
+}
+
+.btn-wrapper {
+  margin-bottom: 2rem;
+}
+
+.btn-menu {
+  flex-basis: 50%;
+}
+
+.active {
+  color: rgb(141, 0, 129);
+}
+
+ul {
+  padding-inline-start: 0;
+}
+
+ul li {
+  list-style: none;
+}
+
+.add-todo {
+  cursor: pointer;
+  text-transform: uppercase;
+  color: rgb(70, 20, 75);
+  background-color: rgb(238, 255, 83);
+  border: 2px solid rgb(100, 14, 100);
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1.3rem;
+  font-weight: bold;
+  box-shadow: 2px 4px 6px rgb(82, 15, 88);
+  border-radius: 20px;
+  margin: 1rem 0;
+  transition: 0.3s ease-out;
+}
+
+.add-todo:hover {
+  transform: scale(1.1);
+  transition: 0.3s ease-in;
+}

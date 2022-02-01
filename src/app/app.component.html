@@ -1,0 +1,64 @@
+<div id="main">
+  <div id="article">
+    <h1>{{ title }}</h1>
+    <hr />
+    <label>What would you like to do today?</label>
+    <hr />
+    <input
+      type="text"
+      #newItem
+      placeholder="add an item"
+      (keyup.enter)="addItem(newItem.value); newItem.value = ''"
+      class="new-todo-name"
+      id="addItemInput"
+      required
+    />
+
+    <button class="add-todo" (click)="addItem(newItem.value)">Add</button>
+  </div>
+
+  <!-- Buttons that show all, still to do, or done items on click -->
+  <div class="btn-wrapper">
+    <button
+      class="btn btn-menu"
+      [class.active]="filter == 'all'"
+      (click)="filter = 'all'"
+    >
+      All
+    </button>
+
+    <button
+      class="btn btn-menu"
+      [class.active]="filter == 'active'"
+      (click)="filter = 'active'"
+    >
+      To Do
+    </button>
+
+    <button
+      class="btn btn-menu"
+      [class.active]="filter == 'done'"
+      (click)="filter = 'done'"
+    >
+      Done
+    </button>
+  </div>
+
+  <div class="todo-list">
+    <h2>
+      {{items.length}}
+      <span *ngIf="items.length === 1; else elseBlock">item</span>
+      <ng-template #elseBlock>items</ng-template>
+    </h2>
+
+    <ul>
+      <li *ngFor="let item of items">
+        <app-todo-item
+          class="delete-todo"
+          (remove)="remove(item)"
+          [item]="item"
+        ></app-todo-item>
+      </li>
+    </ul>
+  </div>
+</div>

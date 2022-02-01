@@ -1,0 +1,43 @@
+<div class="todo-item">
+  <div class="row">
+    <div class="col">
+      <input
+        [id]="item.description"
+        type="checkbox"
+        (change)="item.done = !item.done"
+        [checked]="item.done"
+      />
+      <label class="todo-name" [for]="item.description"
+        >{{item.description}}</label
+      >
+    </div>
+
+    <div class="col">
+      <div class="btn-wrapper" *ngIf="!editable">
+        <button class="btn edit-btn" (click)="editable = !editable">
+          Edit
+        </button>
+        <button class="btn delete-todo" (click)="remove.emit()">Delete</button>
+      </div>
+    </div>
+  </div>
+  <!-- This section shows only if user clicks Edit button -->
+  <div *ngIf="editable">
+    <input
+      class="sm-text-input"
+      placeholder="edit item"
+      [value]="item.description"
+      #editedItem
+      (keyup.enter)="saveItem(editedItem.value)"
+    />
+
+    <div class="btn-wrapper">
+      <button class="btn" (click)="editable = !editable">Cancel</button>
+      <button class="btn btn-save" (click)="saveItem(editedItem.value)">
+        Save
+      </button>
+      <br />
+      <br />
+    </div>
+  </div>
+</div>
